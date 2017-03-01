@@ -12,17 +12,24 @@ module.exports = {
     "name": {
       "type": "string",
       "required": true,
-      "message": "Project name"
+      "message": "專案名稱"
     },
     "description": {
       "type": "string",
       "required": false,
-      "message": "Project description",
-      "default": "A Vue.js project"
+      "message": "專案描述",
+      "default": "新專案"
+    },
+    "start_version": {
+      "type": "Number",
+      "required": false,
+      "message": "起始版本號",
+      "default": "0.1.0"
     },
     "author": {
       "type": "string",
-      "message": "Author"
+      "required": false,
+      "message": "作者"
     },
     "build": {
       "type": "list",
@@ -42,7 +49,15 @@ module.exports = {
     },
     "router": {
       "type": "confirm",
-      "message": "Install vue-router?"
+      "message": "安裝 vue-router?"
+    },
+    "vuex": {
+      "type": "confirm",
+      "message": "安裝 Vuex?"
+    },
+    "needGulp": {
+      "type": "confirm",
+      "message": "要安裝 Gulp#4.0 嗎?"
     },
     "lint": {
       "type": "confirm",
@@ -82,11 +97,13 @@ module.exports = {
   "filters": {
     ".eslintrc.js": "lint",
     ".eslintignore": "lint",
+    "gulpfile.js": "needGulp",
+    "scss/style.scss": "needGulp",
     "config/test.env.js": "unit || e2e",
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
-    "src/router/**/*": "router"
+    "src/router/**/*": "router",
   },
-  "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
+  "completeMessage": "準備完成，請依以下步驟初始化專案:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev"
 };
