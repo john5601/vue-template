@@ -59,6 +59,14 @@ module.exports = {
       "type": "confirm",
       "message": "要安裝 Gulp#4.0 嗎?"
     },
+    "globalStyle": {
+      "type": "confirm",
+      "message": "使用全域 CSS?"
+    },
+    "relativePath": {
+      "type": "confirm",
+      "message": "使用相對路徑?"
+    }
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
@@ -104,6 +112,7 @@ module.exports = {
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
     "src/router/**/*": "router",
+    "scss/style.scss": "globalStyle"
   },
   "completeMessage": "準備完成，請依以下步驟初始化專案:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev"
 };
