@@ -66,7 +66,7 @@ module.exports = {
     "relativePath": {
       "type": "confirm",
       "message": "使用相對路徑?"
-    }
+    },
     "lint": {
       "type": "confirm",
       "message": "Use ESLint to lint your code?"
