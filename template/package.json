@@ -88,7 +88,6 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "3.0.0",
-    "gulp-css-image-dimensions": "^1.1.5",
     "gulp-html-beautify": "^1.0.1",
     "gulp-imagemin": "^3.1.1",
     "gulp-prettyerror": "^1.1.1",

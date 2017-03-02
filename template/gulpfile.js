@@ -5,14 +5,12 @@ const gulp = require('gulp'),
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   sourcemaps = require('gulp-sourcemaps'),
-  bourbon = require("node-bourbon").includePaths,
   cleanCSS = require('gulp-clean-css'),
-  cssImageDimensions = require("gulp-css-image-dimensions"),
   path = require('path'),
   zip = require('gulp-zip')
 
 //------ path
-let paths = {
+const paths = {
   scss: {
     watch: './scss/**/*.{scss, sass}',
     src: './scss/**/!(_)*.{scss,sass}',
@@ -34,14 +32,14 @@ let paths = {
 
 //------ directive
 
-let buildIcon = () => {
+const buildIcon = () => {
   return gulp
     .src(paths.ico.src)
     .pipe(prettyError())
     .pipe(gulp.dest(paths.ico.dest))
 }
 
-let buildImage = () => {
+const buildImage = () => {
   return gulp
     .src(paths.images.src)
     .pipe(prettyError())
@@ -49,7 +47,7 @@ let buildImage = () => {
     .pipe(gulp.dest(paths.images.dest))
 }
 
-let buildHtml = () => {
+const buildHtml = () => {
   return gulp
     .src(paths.html.src)
     .pipe(prettyError())
@@ -61,18 +59,15 @@ let buildHtml = () => {
 
 gulp.task('build:html', buildHtml)
 
-let devStyles = () => {
+const devStyles = () => {
   return gulp
     .src(paths.scss.src)
-    // .pipe(prettyError())
+    .pipe(prettyError())
     .pipe(sourcemaps.init())
-    .pipe(sass.sync({
-      includePaths: bourbon
-    }).on('error', sass.logError))
+    .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 5 versions', '> 5%']
     }))
-    // .pipe(cssImageDimensions())
     .pipe(cleanCSS())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(paths.scss.dest))
@@ -86,10 +81,10 @@ gulp.task('watch:styles', () => {
   });
 });
 
-let buildZip = () => {
-  let
+const buildZip = () => {
+  const
     today = new Date(),
-    month = today.getMonth()+1,
+    month = today.getMonth() + 1,
     day = today.getDate()
   return gulp
     .src('./dist/**/*')
@@ -103,5 +98,4 @@ gulp.task('default', gulp.series(
   buildHtml,
   buildImage,
   buildIcon
-  // buildZip
 ))
