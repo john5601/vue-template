@@ -64,7 +64,9 @@ const devStyles = () => {
     .src(paths.scss.src)
     .pipe(prettyError())
     .pipe(sourcemaps.init())
-    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(sass.sync({{#cssReset}}{
+      includePaths: require('node-reset-scss').includePath
+    }{{/cssReset}}).on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 5 versions', '> 5%']
     }))

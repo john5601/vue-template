@@ -59,6 +59,11 @@ module.exports = {
       "type": "confirm",
       "message": "要安裝 Gulp#4.0 嗎?"
     },
+    "cssReset": {
+      "when": "needGulp",
+      "type": "confirm",
+      "message": "使用 CSS RESET? \r\n(需使用 Gulp)"
+    },
     "globalStyle": {
       "type": "confirm",
       "message": "使用全域 CSS?"

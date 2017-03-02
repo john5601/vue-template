@@ -94,6 +94,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-zip": "^3.2.0",
+    {{#cssReset}}"node-reset-scss": "^1.0.1",{{/cssReset}}
     {{/needGulp}}
     "semver": "^5.3.0",
     "opn": "^4.0.2",
