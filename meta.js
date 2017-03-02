@@ -118,7 +118,7 @@ module.exports = {
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
     "src/router/**/*": "router",
-    "scss/style.scss": "globalStyle"
+    "scss/style.scss": "needGulp && globalStyle"
   },
   "completeMessage": "準備完成，請依以下步驟初始化專案:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev"
 };
