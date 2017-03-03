@@ -1,2 +1,2 @@
-@import "share";
-{{#cssReset}}@import "share";{{/cssReset}}
+@import "reset";
+{{#cssReset}}@import "./share";{{/cssReset}}
